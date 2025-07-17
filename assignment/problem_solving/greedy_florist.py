@@ -14,10 +14,11 @@ def getMinimumCost(k, c):
         else:
             if j < k:
                 minimum_cost += (l + 1)*c[i]
+                j+=1
             else:
                 l+=1
-                j=0
-        #j+=1      
+                minimum_cost += (l + 1)*c[i]
+                j=0    
         i+=1
     return minimum_cost
 
