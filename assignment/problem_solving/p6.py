@@ -1,6 +1,17 @@
-def orange_partition(number_of_oranges, size_of_oranges):
+number_of_oranges = int(input("Enter the number of oranges plucked: "))
 
-number_of_oranges = int(input('Enter the number of oranges :'))
-size_of_oranges = list(map(int, input('Enter the sizes og oranges :').split()))
-size_of_oranges_sorted = sorted(size_of_oranges)
-orange_partition(number_of_oranges, size_of_oranges) 
+oranges = []
+print("Enter the size of oranges: ")
+for _ in range(number_of_oranges):
+    oranges.append(int(input()))
+
+k = 0
+
+for i in range(len(oranges)):
+    if oranges[i] <= oranges[len(oranges) - 1]:
+        oranges[i], oranges[k] = oranges[k], oranges[i]
+        k += 1
+
+oranges[k], oranges[len(oranges) - 1] = oranges[len(oranges) - 1], oranges[k]
+
+print(oranges)
